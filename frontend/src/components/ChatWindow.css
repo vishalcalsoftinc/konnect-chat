@@ -1,0 +1,96 @@
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  height: 70vh; /* Example height, adjust as needed */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden; /* Contains the scrolling area */
+  width: 100%;
+  max-width: 600px; /* Or adjust as per your App.css */
+  box-sizing: border-box;
+}
+
+.chat-window h2 {
+  padding: 10px 15px;
+  margin: 0;
+  background-color: #f7f7f7;
+  border-bottom: 1px solid #eee;
+  font-size: 1.1em;
+  text-align: left;
+}
+
+.messages-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between messages */
+}
+
+.message-item {
+  padding: 8px 12px;
+  border-radius: 15px;
+  max-width: 75%;
+  word-wrap: break-word; /* Prevent long words from overflowing */
+}
+
+.message-item .sender-name {
+  font-weight: bold;
+  margin-right: 5px;
+  display: block; /* Or inline-block if you prefer name on same line */
+  font-size: 0.8em;
+  color: #555;
+  margin-bottom: 3px;
+}
+
+.message-item .message-text {
+  font-size: 0.95em;
+}
+
+.other-message {
+  background-color: #e9e9eb;
+  color: #333;
+  align-self: flex-start; /* Messages from others align left */
+  border-bottom-left-radius: 2px;
+}
+
+.other-message .sender-name {
+  /* Styles for sender name if different for others */
+}
+
+.my-message {
+  background-color: #007bff;
+  color: white;
+  align-self: flex-end; /* My messages align right */
+  border-bottom-right-radius: 2px;
+}
+
+.my-message .sender-name {
+  /* You might hide your own sender name or style it differently */
+  display: none; 
+}
+
+.system-message {
+  font-style: italic;
+  color: #777;
+  text-align: center;
+  font-size: 0.85em;
+  align-self: center;
+  background-color: #f0f0f0;
+  width: auto; /* Take only needed width */
+  max-width: 90%;
+}
+
+.message-input-form {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #eee;
+  background-color: #f7f7f7;
+}
+
+.message-input-form input[type="text"] {
+  flex-grow: 1;
+  margin-right: 10px;
+  margin-bottom: 0; /* Override from App.css if needed */
+}
