@@ -68,7 +68,7 @@ async def websocket_endpoint(websocket: WebSocket, group_id: str, user_name: str
                 "groupId": group_id,
                 "message": data.get("message", "") # Get message content
             }
-            await manager.broadcast_to_group(group_id, message_payload, exclude_self=websocket)
+            await manager.broadcast_to_group(group_id, message_payload) # No exclude_self
 
     except WebSocketDisconnect:
         manager.disconnect(websocket, group_id, user_name)
